@@ -1,8 +1,9 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Ocean Dark Extended",
-    "editor.fontSize": 13,
-    "editor.fontFamily": "'Source Code Pro Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
+    "workbench.colorTheme": "Palenight Operator",
+    "editor.cursorStyle": "underline",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'Iosevka Nerd Font Mono', 'Source Code Pro for Powerline', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": false,
     "editor.tabSize": 8,
     "editor.insertSpaces": false,
