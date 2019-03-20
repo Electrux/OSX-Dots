@@ -314,6 +314,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq-default ispell-extra-args '("--sug-mode=ultra"))
   (setq-default ycmd-force-semantic-completion t)
   (add-hook 'python-mode-hook 'ycmd-mode)
+  (add-to-list 'auto-mode-alist '("\\.ebs$" . prog-mode))
   )
 
 (defun dotspacemacs/user-config ()
