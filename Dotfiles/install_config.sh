@@ -1,6 +1,6 @@
 #!/bin/bash
 
-script_dir=$(dirname "$0")
+script_dir="${HOME}/Git/Electrux/OSX-Dots/Dotfiles"
 
 mkdir -p ~/.config/nvim ~/.mpd
 

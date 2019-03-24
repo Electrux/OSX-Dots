@@ -54,7 +54,7 @@ ZSH_THEME="spaceship-prompt/spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-completions)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -220,7 +220,3 @@ export DEBUG_MODE="true"
 # Neofetch at beginning
 echo ''
 neofetch
-
-# followed by todo list
-echo ''
-tdo
