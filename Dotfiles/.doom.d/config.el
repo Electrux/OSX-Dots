@@ -2,10 +2,10 @@
 
 ;; Place your private configuration here
 
-(setq doom-font (font-spec :family "Iosevka" :size 24))
+(setq doom-font (font-spec :family "Iosevka Nerd Font Mono" :size 13))
 
-(set-frame-parameter (selected-frame) 'alpha '(70 . 50))
-(add-to-list 'default-frame-alist '(alpha . (70 . 50)))
+;;(set-frame-parameter (selected-frame) 'alpha '(70 . 50))
+;;(add-to-list 'default-frame-alist '(alpha . (70 . 50)))
 
 (require 'doom-themes)
 
@@ -43,3 +43,5 @@
 (setq-default c-basic-offset 8
 	      tab-width 8
 	      indent-tabs-mode t)
+
+(toggle-frame-fullscreen)

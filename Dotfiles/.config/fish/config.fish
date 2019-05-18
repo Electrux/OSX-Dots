@@ -49,5 +49,20 @@ alias gpl='git pull'
 alias gc='git commit'
 alias gcl='git clone'
 
+# TODO: remove as soon as fixed
+# https://github.com/railwaycat/homebrew-emacsmacport/issues/21
+#alias emacs=/Applications/Emacs.app/Contents/MacOS/emacs
+
+# Fish prompt settings reconfigure
+set SPACEFISH_PROMPT_FIRST_PREFIX_SHOW "true"
+set SPACEFISH_CHAR_SUFFIX "  "
+set SPACEFISH_TIME_SHOW "true"
+set SPACEFISH_USER_SHOW "always"
+set SPACEFISH_HOST_SHOW "always"
+set SPACEFISH_DIR_TRUNC "0"
+set SPACEFISH_EXEC_TIME_ELAPSED "5"
+set SPACEFISH_BATTERY_SHOW "charged"
+set SPACEFISH_EXIT_CODE_SHOW "true"
+
 echo ''
 neofetch

@@ -64,6 +64,9 @@ Plug 'lervag/vimtex'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Plugin for fish support
+Plug 'dag/vim-fish'
+
 " Vim themes
 "Plug 'chriskempson/base16-vim'
 "Plug 'cormacrelf/vim-colors-github'

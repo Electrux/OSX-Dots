@@ -8,7 +8,7 @@ ln -sf ${script_dir}/.{vimrc,ncmpcpp} ~/
 ln -sf ${script_dir}/.mpd/mpd.conf ~/.mpd/mpd.conf
 ln -sf ${script_dir}/.config/ranger ~/.config/
 ln -sf ${script_dir}/.config/fish ~/.config/
-ln -sf ${script_dir}/.config/.doom.d ~/.config/
+ln -sf ${script_dir}/.doom.d ~/
 
 # neovim
 ln -sf ${script_dir}/.vimrc ~/.config/nvim/init.vim
