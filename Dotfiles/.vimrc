@@ -67,7 +67,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Vim themes
 "Plug 'chriskempson/base16-vim'
 "Plug 'cormacrelf/vim-colors-github'
-Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'davidcelis/vim-ariake-dark'
 
 " Displays indentation level with thin line
 "Plug 'yggdroot/indentLine'
@@ -84,9 +85,8 @@ let g:airline_theme = 'deus'
 
 " Set ViM color scheme
 set termguicolors
-"colorscheme github
-colorscheme dracula
-"so ~/Git/Electrux/OSX-Dots/ariake.vim
+colorscheme Ariake-Dark
+set background=dark
 
 " For dlang
 let g:dutyl_stdImportPaths=['/usr/local/include/dlang/dmd']

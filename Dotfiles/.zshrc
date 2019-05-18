@@ -172,11 +172,6 @@ export PATH="/usr/local/opt/llvm/bin:${PATH}"
 export CPPFLAGS="-I/usr/local/opt/llvm/include ${CPPFLAGS}"
 export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib ${LDFLAGS}"
 
-## Set default gcc to be homebrew llvm
-#export PATH="/usr/local/opt/llvm/bin:${PATH}"
-#export CPPFLAGS="-I/usr/local/opt/llvm/include ${CPPFLAGS}"
-#export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib ${LDFLAGS}"
-
 ## Set QT paths
 #export PATH="/usr/local/opt/qt/bin:${PATH}"
 #export CPPFLAGS="-I/usr/local/opt/qt/include ${CPPFLAGS}"
