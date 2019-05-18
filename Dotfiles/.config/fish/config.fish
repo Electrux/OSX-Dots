@@ -6,32 +6,29 @@ end
 
 if test "$FISH_LOGIN_LOADED" !=  "true"
 	# Go lang directories
-	set -x GOPATH "$HOME/.go"
-	set -x PATH "$PATH:$GOPATH/bin"
+	set -gx GOPATH "$HOME/.go"
+	set -gx PATH "$PATH:$GOPATH/bin"
 	test -d "$GOPATH" || mkdir "$GOPATH"
 	test -d "$GOPATH/src/github.com" || mkdir -p "$GOPATH/src/github.com"
 
 	# Rust lang settings
-	set -x PATH "$PATH:$HOME/.cargo/bin"
+	set -gx PATH "$PATH:$HOME/.cargo/bin"
 
 	# Default gcc = homebrew llvm
-	set -x PATH "/usr/local/opt/llvm/bin:$PATH"
-	set -x CPPFLAGS "-I/usr/local/opt/llvm/include $CPPFLAGS"
-	set -x LDFLAGS "-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib $LDFLAGS"
+	set -gx PATH "/usr/local/opt/llvm/bin:$PATH"
+	set -gx CPPFLAGS "-I/usr/local/opt/llvm/include $CPPFLAGS"
+	set -gx LDFLAGS "-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib $LDFLAGS"
 
 	# Set Qt paths
-	set -x PATH "/usr/local/opt/qt/bin:$PATH"
-	set -x CPPFLAGS "-I/usr/local/opt/qt/include $CPPFLAGS"
-	set -x LDFLAGS "-L/usr/local/opt/qt/lib $LDFLAGS"
+	set -gx PATH "/usr/local/opt/qt/bin:$PATH"
+	set -gx CPPFLAGS "-I/usr/local/opt/qt/include $CPPFLAGS"
+	set -gx LDFLAGS "-L/usr/local/opt/qt/lib $LDFLAGS"
 
 	# Set haskell (stack) path
-	set -x PATH "$HOME/.local/bin:$PATH"
+	set -gx PATH "$HOME/.local/bin:$PATH"
 
-
-	set -x FISH_LOGIN_LOADED "true"
+	set -gx FISH_LOGIN_LOADED "true"
 end
-echo ''
-neofetch
 
 alias vim="nvim"
 
@@ -51,3 +48,6 @@ alias gp='git push'
 alias gpl='git pull'
 alias gc='git commit'
 alias gcl='git clone'
+
+echo ''
+neofetch
