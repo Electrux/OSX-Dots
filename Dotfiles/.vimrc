@@ -11,8 +11,6 @@ set relativenumber
 set number
 set backspace=indent,eol,start
 
-let g:ycm_global_ycm_extra_conf = '/Users/electrux/Git/Electrux/OSX-Dots/DotFiles/.ycm_extra_conf.py'
-
 " Remove cursor change in nvim.
 set guicursor=
 
@@ -32,7 +30,8 @@ set rtp+=/usr/local/opt/fzf
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Plugin for code completion server - You complete me.
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clang-completer --system-libclang' }
+"Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clang-completer --system-libclang' }
+Plug 'xavierd/clang_complete'
 
 " Plugin for file management.
 Plug 'scrooloose/nerdtree'
@@ -71,7 +70,8 @@ Plug 'dag/vim-fish'
 "Plug 'chriskempson/base16-vim'
 "Plug 'cormacrelf/vim-colors-github'
 "Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'davidcelis/vim-ariake-dark'
+"Plug 'davidcelis/vim-ariake-dark'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " Displays indentation level with thin line
 "Plug 'yggdroot/indentLine'
@@ -88,8 +88,8 @@ let g:airline_theme = 'deus'
 
 " Set ViM color scheme
 set termguicolors
-colorscheme Ariake-Dark
 set background=dark
+colorscheme palenight
 
 " For dlang
 let g:dutyl_stdImportPaths=['/usr/local/include/dlang/dmd']

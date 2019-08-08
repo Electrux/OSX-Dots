@@ -4,10 +4,10 @@ script_dir="${HOME}/Git/Electrux/OSX-Dots/Dotfiles"
 
 mkdir -p ~/.config/nvim ~/.mpd
 
-ln -sf ${script_dir}/.{vimrc,ncmpcpp} ~/
+ln -sf ${script_dir}/.{vimrc,ncmpcpp,zshrc} ~/
 ln -sf ${script_dir}/.mpd/mpd.conf ~/.mpd/mpd.conf
 ln -sf ${script_dir}/.config/ranger ~/.config/
-ln -sf ${script_dir}/.config/fish ~/.config/
+#ln -sf ${script_dir}/.config/fish ~/.config/
 ln -sf ${script_dir}/.doom.d ~/
 
 # neovim
@@ -20,10 +20,10 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install Oh My ZSH
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed 's:env zsh::g')"
-#mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
-#git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/custom/themes/spaceship-prompt
-#git clone https://github.com/rupa/z.git ~/Git/z
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed 's:env zsh::g')"
+mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/custom/themes/spaceship-prompt
+git clone https://github.com/rupa/z.git ~/Git/z
 
-brew install python3 python2 vim neovim jq fzf peco git bash neofetch youtube-dl cmake llvm syncthing ruby gnutls sfml && brew tap caskroom/fonts && brew cask install iterm2 google-chrome vlc qbittorrent discord steam visual-studio-code font-iosevka-nerd-font-mono epic-games && brew services start syncthing && pip3 install neovim && pip2 install neovim
-#git clone https://github.com/b4b4r07/emoji-cli.git ~/Git/emoji-cli
+brew install python3 python2 vim neovim jq fzf peco git zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions neofetch youtube-dl cmake llvm syncthing ruby gnutls sfml && brew tap caskroom/fonts && brew cask install iterm2 google-chrome vlc qbittorrent discord steam visual-studio-code font-iosevka-nerd-font-mono epic-games && brew services start syncthing && pip3 install neovim && pip2 install neovim
+git clone https://github.com/b4b4r07/emoji-cli.git ~/Git/emoji-cli
