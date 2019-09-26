@@ -1,22 +1,22 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Palenight Operator",
-    "editor.cursorStyle": "underline",
+    "editor.cursorStyle": "block",
     "editor.fontSize": 13,
-    "editor.fontFamily": "'Iosevka Nerd Font Mono', 'Source Code Pro for Powerline', Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontWeight": "600",
+    "editor.fontFamily": "'Mononoki Nerd Font Mono', 'Source Code Pro for Powerline', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontWeight": "900",
     "editor.fontLigatures": false,
     "editor.tabSize": 8,
     "editor.insertSpaces": false,
-    "ycmd.enabled_languages": [
-        "cpp",
-        "c"
-    ],
-    "ycmd.global_extra_config": "/Users/elec/Git/Electrux/OSX-Dots/Dotfiles/.ycm_extra_conf.py",
-    "ycmd.path": "/Users/elec/Git/ycmd",
-    "ycmd.python": "/usr/local/bin/python3",
-
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "extensions.ignoreRecommendations": false,
+    "workbench.colorTheme": "SynthWave '84",
+    "doxdocgen.generic.returnTemplate": "\\return {type} ",
+    "doxdocgen.generic.paramTemplate": "\\param {param} ",
+    "doxdocgen.generic.dateTemplate": "\\date {date}",
+    "doxdocgen.generic.briefTemplate": "\\brief {text}",
+    "doxdocgen.file.versionTag": "\\version 0.1",
+    "doxdocgen.file.fileTemplate": "\\file {name}",
+    "window.zoomLevel": 0
 }

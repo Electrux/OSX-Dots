@@ -139,6 +139,8 @@ run() {
 
 export DEBUG_MODE="true"
 
+alias bs='PREFIX=/usr/local USE_CCACHE=yes ./bootstrap.sh'
+
 # Neofetch at beginning
 echo ''
 neofetch
