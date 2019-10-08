@@ -71,7 +71,8 @@ Plug 'dag/vim-fish'
 "Plug 'cormacrelf/vim-colors-github'
 "Plug 'dracula/vim', { 'as': 'dracula' }
 "Plug 'davidcelis/vim-ariake-dark'
-Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'drewtempelmeyer/palenight.vim'
+Plug 'exitface/synthwave.vim'
 
 " Displays indentation level with thin line
 "Plug 'yggdroot/indentLine'
@@ -84,12 +85,12 @@ filetype plugin indent on    " required
 let g:livepreview_previewer = 'open -a Preview'
 let g:livepreview_engine = 'xelatex' . ' '
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'deus'
+let g:airline_theme = 'synthwave'
 
 " Set ViM color scheme
 set termguicolors
 set background=dark
-colorscheme palenight
+colorscheme synthwave
 
 " For dlang
 let g:dutyl_stdImportPaths=['/usr/local/include/dlang/dmd']
