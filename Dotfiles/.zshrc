@@ -138,8 +138,10 @@ run() {
 }
 
 export DEBUG_MODE="true"
+export PREFIX_DIR="/usr/local"
+export USE_CCACHE=yes
 
-alias bs='PREFIX=/usr/local USE_CCACHE=yes ./bootstrap.sh'
+alias bs='rm -rf build && mkdir -p build && cd build && cmake .. && make -j8 && make install && cd ..'
 
 # Neofetch at beginning
 echo ''
