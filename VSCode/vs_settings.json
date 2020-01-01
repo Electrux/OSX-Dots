@@ -3,7 +3,7 @@
     "editor.cursorStyle": "block",
     "editor.fontSize": 13,
     "editor.fontFamily": "'Mononoki Nerd Font Mono', 'Source Code Pro for Powerline', Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontWeight": "900",
+    "editor.fontWeight": "500",
     "editor.fontLigatures": false,
     "editor.tabSize": 8,
     "editor.insertSpaces": false,
@@ -11,12 +11,21 @@
     "telemetry.enableCrashReporter": false,
     "workbench.iconTheme": "material-icon-theme",
     "extensions.ignoreRecommendations": false,
-    "workbench.colorTheme": "SynthWave '84",
+    "workbench.colorTheme": "Slack Theme Aubergine Dark",
+    "window.zoomLevel": 0,
+
     "doxdocgen.generic.returnTemplate": "\\return {type} ",
     "doxdocgen.generic.paramTemplate": "\\param {param} ",
     "doxdocgen.generic.dateTemplate": "\\date {date}",
-    "doxdocgen.generic.briefTemplate": "\\brief {text}",
-    "doxdocgen.file.versionTag": "\\version 0.1",
+    "doxdocgen.generic.briefTemplate": "",
+    "doxdocgen.file.versionTag": "",
     "doxdocgen.file.fileTemplate": "\\file {name}",
-    "window.zoomLevel": 0
+    "doxdocgen.generic.authorEmail": "ElectruxRedsworth@gmail.com",
+    "doxdocgen.generic.authorName": "Electrux Redsworth",
+    "doxdocgen.file.copyrightTag": [
+        "@copyright Copyright (c) {year}, all rights reserved.<br/>",
+        "This project uses the BSD 3-clause license,<br/>",
+        "attached in the project root directory.<br/>"
+    ]
 }
+
