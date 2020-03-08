@@ -25,5 +25,5 @@ mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
 git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/custom/themes/spaceship-prompt
 git clone https://github.com/rupa/z.git ~/Git/z
 
-brew install python3 python2 vim neovim jq fzf peco git zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions neofetch youtube-dl cmake llvm syncthing ruby gnutls sfml hub && brew tap homebrew/cask-fonts && brew cask install iterm2 google-chrome vlc qbittorrent discord steam visual-studio-code font-mononoki-nerd-font-mono epic-games && brew services start syncthing && pip3 install neovim && pip2 install neovim
+brew install python3 vim neovim jq fzf peco git zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions neofetch youtube-dl cmake llvm syncthing ruby gnutls sfml hub && brew tap homebrew/cask-fonts && brew cask install iterm2 google-chrome vlc qbittorrent discord steam visual-studio-code font-iosevka-nerd-font epic-games && brew services start syncthing && pip3 install neovim
 git clone https://github.com/b4b4r07/emoji-cli.git ~/Git/emoji-cli

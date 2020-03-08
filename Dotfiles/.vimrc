@@ -86,7 +86,7 @@ filetype plugin indent on    " required
 let g:livepreview_previewer = 'open -a Preview'
 let g:livepreview_engine = 'xelatex' . ' '
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'synthwave'
+let g:airline_theme = 'tomorrow'
 
 " Set ViM color scheme
 set termguicolors
