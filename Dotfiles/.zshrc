@@ -137,11 +137,17 @@ run() {
 	fi
 }
 
-export DEBUG_MODE="true"
 export PREFIX_DIR="/usr/local"
 export USE_CCACHE=yes
 
+function ccd {
+	mkdir $1 && cd $1
+}
+
+alias gs='git status'
+
 alias bs='rm -rf build && mkdir -p build && cd build && cmake .. && make -j8 && make install; cd ..'
+alias ccbs='rm -rf build && mkdir -p build && cd build && cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON && make -j8 && make install; cd ..'
 alias dbs='rm -rf build && mkdir -p build && cd build && DEBUG=true cmake .. && make -j8 && make install; cd ..'
 
 # Neofetch at beginning

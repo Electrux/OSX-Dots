@@ -29,8 +29,7 @@ set rtp+=/usr/local/opt/fzf
 " ViM-Plug begins.
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Plugin for code completion server - You complete me.
-"Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clang-completer --system-libclang' }
+" Plugin for code completion server - clang_complete
 Plug 'xavierd/clang_complete'
 
 " Plugin for file management.
@@ -45,26 +44,27 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plugin for Lively Previewing LaTeX PDF Output.
 Plug 'xuhdev/vim-latex-live-preview'
 
-" Plugins for elixir support.
-Plug 'elixir-editors/vim-elixir'
-Plug 'slashmili/alchemist.vim'
-
-" Plugin for nim support
+" Plugin for Nim support
 Plug 'zah/nim.vim'
 
-" Plugins for dlang
-Plug 'Sirsireesh/vim-dlang-phobos-highlighter'
-Plug 'idanarye/vim-dutyl'
-
-" Plugin for latex
+" Plugin for Latex
 Plug 'lervag/vimtex'
+
+" Plugin for (better) Rust syntax highlighting
+Plug 'rust-lang/rust.vim'
+
+" Plugin for Fish support
+Plug 'dag/vim-fish'
+
+" Plugin for Feral support
+Plug 'Feral-Lang/Feral-Vim'
+
+" Plugin for TOML support
+Plug 'cespare/vim-toml'
 
 " Plugins for powerline via ViM-Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" Plugin for fish support
-Plug 'dag/vim-fish'
 
 " Vim themes
 "Plug 'chriskempson/base16-vim'
@@ -83,8 +83,6 @@ call plug#end()
 
 filetype plugin indent on    " required
 
-let g:livepreview_previewer = 'open -a Preview'
-let g:livepreview_engine = 'xelatex' . ' '
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'tomorrow'
 
@@ -92,15 +90,6 @@ let g:airline_theme = 'tomorrow'
 set termguicolors
 set background=dark
 colorscheme dank-neon
-
-" For dlang
-let g:dutyl_stdImportPaths=['/usr/local/include/dlang/dmd']
-call dutyl#register#tool('dfmt','~/.dub/packages/dfmt-master/dfmt/bin/dfmt')
-call dutyl#register#tool('dscanner','~/.dub/packages/dscanner-0.5.11/dscanner/bin/dscanner')
-
-autocmd Filetype tex setl updatetime=1
-autocmd VimEnter d if exists(':DUDCDrestartServer') | DUDCDrestartServer | endif
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 " Customization
 
@@ -112,13 +101,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" YCM keys
-nnoremap <leader>yg :YcmCompleter GetType<CR>
-nnoremap <leader>yf :YcmCompleter FixIt<CR>
-nnoremap <leader>yi :YcmCompleter GoToInclude<CR>
-nnoremap <leader>ydc :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>ydf :YcmCompleter GoToDefinition<CR>
 
 " Other editing
 "clear highlight
