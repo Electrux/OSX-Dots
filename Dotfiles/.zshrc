@@ -144,6 +144,30 @@ function ccd {
 	mkdir $1 && cd $1
 }
 
+function bb {
+	git worktree add /tmp/book gh-pages
+	mdbook build
+	rm -rf /tmp/book/* # this won't delete the .git directory
+	cp -rp book/* /tmp/book/
+	cd /tmp/book
+	git add -A
+	git commit -m "updated pages on $(date)"
+	git push origin gh-pages
+	cd -
+}
+
+function bbf {
+	git worktree add /tmp/book gh-pages
+	mdbook build
+	rm -rf /tmp/book/* # this won't delete the .git directory
+	cp -rp book/* /tmp/book/
+	cd /tmp/book
+	git add -A
+	git commit --amend
+	git push --force origin gh-pages
+	cd -
+}
+
 alias gs='git status'
 
 alias bs='rm -rf build && mkdir -p build && cd build && cmake .. && make -j8 && make install; cd ..'
