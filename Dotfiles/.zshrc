@@ -76,47 +76,43 @@ SPACESHIP_EXIT_CODE_SHOW="true"
 
 source ~/Git/emoji-cli/emoji-cli.zsh
 
-# Go lang settings
-export GOPATH="${HOME}/.go"
-export GOROOT="$(brew --prefix go)/libexec"
-export PATH="${PATH}:${GOPATH}/bin:${GOROOT}/bin"
-
-test -d "${GOPATH}" || mkdir "${GOPATH}"
-test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
-
-# Rust lang settings
-source ~/.cargo/env
-
-# Nim lang settings
-export PATH="${PATH}:${HOME}/.nimble/bin"
-
 # Set default gcc to be homebrew llvm
 export PATH="/usr/local/opt/llvm/bin:${PATH}"
-export CPPFLAGS="-I/usr/local/opt/llvm/include ${CPPFLAGS}"
-export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib ${LDFLAGS}"
+export CPPFLAGS="-I/usr/local/include -I/usr/local/opt/llvm/include ${CPPFLAGS}"
+export LDFLAGS="-L/usr/local/lib -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib ${LDFLAGS}"
 
 ## Set QT paths
 #export PATH="/usr/local/opt/qt/bin:${PATH}"
 #export CPPFLAGS="-I/usr/local/opt/qt/include ${CPPFLAGS}"
 #export LDFLAGS="-L/usr/local/opt/qt/lib ${LDFLAGS}"
 
-# Set path for haskell (stack)
-export PATH="${HOME}/.local/bin:${PATH}"
+# Go lang settings
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix go)/libexec"
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+export PATH="${GOPATH}/bin:${GOROOT}/bin:${PATH}"
+
+# Rust lang settings
+source ~/.cargo/env
+
+# Nim lang, Haskell, Feral binaries
+export PATH="${HOME}/.nimble/bin:${HOME}/.local/bin:${HOME}/.feral/bin:${PATH}"
 
 # Use hub instead of directly git to reduce work
 alias git="/usr/local/bin/hub"
 
-# Use ls_extended instead of ls
-#alias ls="/usr/local/bin/ls_extended"
-#alias l="ls -lAsh"
-
 # Set exa as the ls command
 #alias ls='exa -s name -F'
 #alias l='ls -la'
+
 # Set ls_extended as the ls command
 alias ls='ls_extended -sn'
 alias l='ls -lAh'
 alias ll='ls -lah'
+
+# Set tree colors
+alias tree='tree -lFC'
 
 # Compile + Run a source file
 run() {
@@ -137,13 +133,13 @@ run() {
 	fi
 }
 
-export PREFIX_DIR="/usr/local"
 export USE_CCACHE=yes
 
 function ccd {
 	mkdir $1 && cd $1
 }
 
+# build book
 function bb {
 	git worktree add /tmp/book gh-pages
 	mdbook build
@@ -156,6 +152,7 @@ function bb {
 	cd -
 }
 
+# build book (amend & force)
 function bbf {
 	git worktree add /tmp/book gh-pages
 	mdbook build
@@ -168,11 +165,31 @@ function bbf {
 	cd -
 }
 
+# build feral
+function bf {
+	CWD=$(pwd)
+	cd ~/Git/Electrux/Feral-Lang/Feral
+	rm -rf build && mkdir -p build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Release && make -j8 && make install
+	cd $CWD
+}
+
+# build feral with mem profile summary
+function bfm {
+	CWD=$(pwd)
+	cd ~/Git/Electrux/Feral-Lang/Feral
+	rm -rf build && mkdir -p build && cd build && MEM_PROFILE=true cmake .. -DCMAKE_BUILD_TYPE=Release && make -j8 && make install
+	cd $CWD
+}
+
 alias gs='git status'
 
-alias bs='rm -rf build && mkdir -p build && cd build && cmake .. && make -j8 && make install; cd ..'
-alias ccbs='rm -rf build && mkdir -p build && cd build && cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON && make -j8 && make install; cd ..'
-alias dbs='rm -rf build && mkdir -p build && cd build && DEBUG=true cmake .. && make -j8 && make install; cd ..'
+alias b='rm -rf build && mkdir -p build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Release && make -j8 && make install; cd ..'
+alias ccb='rm -rf build && mkdir -p build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON && make -j8 && make install; cd ..'
+alias db='rm -rf build && mkdir -p build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug && make -j8 && make install; cd ..'
+
+alias sonarr='docker create --name=sonarr -e PUID=501 -e PGID=20 -e TZ=Asia/Kolkata -e UMASK_SET=022 -p 8989:8989 -v $HOME/sonarr/config:/config -v $HOME/Movies/Series:/tv -v $HOME/sonarr/downloads:/downloads --restart unless-stopped linuxserver/sonarr && docker start sonarr'
+alias radarr='docker create --name=radarr -e PUID=501 -e PGID=20 -e TZ=Asia/Kolkata -e UMASK_SET=022 -p 7878:7878 -v $HOME/radarr/config:/config -v $HOME/Movies:/movies -v $HOME/radarr/downloads:/downloads --restart unless-stopped linuxserver/radarr && docker start radarr'
+alias jackett='docker create --name=jackett -e PUID=501 -e PGID=20 -e TZ=Asia/Kolkata -p 9117:9117 -v $HOME/jackett/config:/config -v $HOME/jackett/downloads:/downloads --restart unless-stopped linuxserver/jackett && docker start jackett'
 
 # Neofetch at beginning
 echo ''
