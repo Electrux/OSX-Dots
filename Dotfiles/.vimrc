@@ -73,7 +73,8 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'davidcelis/vim-ariake-dark'
 "Plug 'drewtempelmeyer/palenight.vim'
 "Plug 'exitface/synthwave.vim'
-Plug 'DankNeon/vim'
+"Plug 'DankNeon/vim'
+Plug 'morhetz/gruvbox'
 
 " Displays indentation level with thin line
 "Plug 'yggdroot/indentLine'
@@ -84,12 +85,16 @@ call plug#end()
 filetype plugin indent on    " required
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tomorrow'
+"let g:airline_theme = 'gruvbox'
+
+let g:gruvbox_italic = 1
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_light = 'hard'
 
 " Set ViM color scheme
 set termguicolors
 set background=dark
-colorscheme dank-neon
+colorscheme gruvbox
 
 " Customization
 
