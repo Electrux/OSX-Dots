@@ -12,7 +12,7 @@ set number
 set backspace=indent,eol,start
 
 " Remove cursor change in nvim.
-set guicursor=
+"set guicursor=
 
 " Enable python3 support ( for YCM ) in nvim.
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -30,7 +30,10 @@ set rtp+=/usr/local/opt/fzf
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Plugin for code completion server - clang_complete
-Plug 'xavierd/clang_complete'
+"Plug 'xavierd/clang_complete'
+
+" YCM
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer' }
 
 " Plugin for file management.
 Plug 'scrooloose/nerdtree'
@@ -72,9 +75,9 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'dracula/vim', { 'as': 'dracula' }
 "Plug 'davidcelis/vim-ariake-dark'
 "Plug 'drewtempelmeyer/palenight.vim'
-"Plug 'exitface/synthwave.vim'
+"Plug 'artanikin/vim-synthwave84'
 "Plug 'DankNeon/vim'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 
 " Displays indentation level with thin line
 "Plug 'yggdroot/indentLine'
@@ -87,14 +90,14 @@ filetype plugin indent on    " required
 let g:airline_powerline_fonts = 1
 "let g:airline_theme = 'gruvbox'
 
-let g:gruvbox_italic = 1
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_light = 'hard'
+"let g:gruvbox_italic = 1
+"let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_contrast_light = 'hard'
 
 " Set ViM color scheme
 set termguicolors
 set background=dark
-colorscheme gruvbox
+"colorscheme synthwave84
 
 " Customization
 

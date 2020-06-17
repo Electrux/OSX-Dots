@@ -16,3 +16,4 @@ set SPACEFISH_BATTERY_SHOW "charged"
 set SPACEFISH_EXIT_CODE_SHOW "true"
 
 neofetch
+nl
